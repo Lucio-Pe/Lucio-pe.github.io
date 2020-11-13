@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-blue.min.css" />
+<link rel="stylesheet" href="styleawp.css">
+<title>Document</title>
+</head>
+<body>
+  <!-- clase1: introduccion a las aplicaciones web progresivas, en la parte superior derecha
+  aparece un simbolo de +, que dice que la pagina es instalable
+ 
+-se usa material desing lite, que es una versioon resumida de material desing
+
+devtools de chrome: es las herramientas de desarrollador del navegador de chrome
+
+material desing lite: tiene varias cosas, en la parte de componentes esta todo lo que podemos adherir a nuestro hmtl,
+    -en la parte de getting started: es como se comienza a implementar, depende como se quiera enlazar a nuestro codigo
+     puede ser hosted, dowload, npm, etc. usamos hosted, y copiamos la etiqueta link, si moodificamos usamos la etiqueta del component tambien
+     con la combinacion de colores elegida. y pegamos tambien el script en la parte inferior del body
+
+     -en la parte de component, se puede elgir los colores para cuando se cargue el codigo, y abajo esta el codigo con CDN(conten delivery network
+     red de entrega de contenido)
+
+     -tambien se elije que insertar y en la misma pagina hay una guia paso a paso como incluirla en nuestro proyecto
+-->
+
+<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout-icon"></div>
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout__title">Simple Lista</span>
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="#">item 1</a>
+        <a class="mdl-navigation__link" href="#">item 2</a>
+        <a class="mdl-navigation__link" href="#">item 3</a>
+        <a class="mdl-navigation__link" href="#">item 4</a>     
+      </nav>
+      <div class="mdl-layout-spacer"></div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+        <label class="mdl-button mdl-js-button mdl-button--icon"
+               for="fixed-header-drawer-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="sample"
+                 id="fixed-header-drawer-exp">
+        </div>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout__title">Simple Layout</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="#">Nav link 1</a>
+      <a class="mdl-navigation__link" href="#">Nav link 2</a>
+      <a class="mdl-navigation__link" href="#">Nav link 3</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+  <div class="lista">lista de compras de aqui</div>
+
+  
+
+    <div style="display: grid; justify-content: center; grid-template-columns: 25% 25% 25%;
+    gap: 10px; padding: 10px; box-sizing: border-box;">
+
+      <div class="mdl-card">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">item 1</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <div>precio</div>
+        <div>cantidad</div>
+      </div>
+      <div class="mdl-card__actions">
+        <a href="#">borrar</a>
+      </div>
+    </div>
+    <div class="mdl-card">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">item 1</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <div>precio</div>
+        <div>cantidad</div>
+      </div>
+      <div class="mdl-card__actions">
+        <a href="#">borrar</a>
+      </div>
+    </div><div class="mdl-card">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">item 1</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <div>precio</div>
+        <div>cantidad</div>
+      </div>
+      <div class="mdl-card__actions">
+        <a href="#">borrar</a>
+      </div>
+    </div><div class="mdl-card">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">item 1</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <div>precio</div>
+        <div>cantidad</div>
+      </div>
+      <div class="mdl-card__actions">
+        <a href="#">borrar</a>
+      </div>
+    </div><div class="mdl-card">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">item 1</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <div>precio</div>
+        <div>cantidad</div>
+      </div>
+      <div class="mdl-card__actions">
+        <a href="#">borrar</a>
+      </div>
+    </div><div class="mdl-card">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">item 1</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <div>precio</div>
+        <div>cantidad</div>
+      </div>
+      <div class="mdl-card__actions">
+        <a href="#">borrar</a>
+      </div>
+    </div>
+
+
+  </div>
+      
+
+     
+   <!-- break 1.26hs -->
+  </main>
+</div>
+
+<!-- lo que se hizo en esta clase es usa material desing lite e ir copiando y pegando varios codigos que la pagina ofree
+para armar el diseño,usamos en la parte de componentes, menu, cards y diseño y fuimos cortando lagunas cosas
+y agregando otras para customizar todo el diseño y que quede de la manera que esta presentada -->
+
+
+<!-- a partir de la hora 2.20hs empezamos a usar github 
+-primero vamos a nuestro usuario github, luego en el simobolo +, ponemos la opcion nuevo repositorio
+ahi no salen el campo para completar, con el nombre de usuario, y crar y nos lanza unos comandos para poder comenzar a usar git y nos genera una URL
+- primero buscamos donde tenemos el preyecto en la consola, luego con el comando
+ls  podemos tener lo que hay, con git status, dice lo que esta para subirlo a git, despues enlazamos el git remote que nos la pagina de github una url
+
+-luego tiramos otro git status, para ver como esta, y figuran los archivos
+- luego ponemos git add, y agrega al master.
+para corroborar usamos git status y aparecen los dos archivos en verde que ya estan cargados
+
+-luego usamos git commit que es para que los archivos quden dentro del historial de git para poder llevarlos al repo remoto,
+se pone -m para poner un comentario queda git commit -m "comnetario"
+
+-para finalizar podemos seguir los pasos que da la pagina luego usar git push origin master
+
+
+-->
+
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</body>
+</html>
