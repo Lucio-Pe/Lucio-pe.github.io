@@ -33,13 +33,26 @@ material desing lite: tiene varias cosas, en la parte de componentes esta todo l
     <div class="mdl-layout__header-row">
       <span class="mdl-layout__title">Simple Lista</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation">
+
+
+      <!-- <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="#">item 1</a>
         <a class="mdl-navigation__link" href="#">item 2</a>
         <a class="mdl-navigation__link" href="#">item 3</a>
         <a class="mdl-navigation__link" href="#">item 4</a>     
-      </nav>
+      </nav>   clase2: se borra esta parte para agregar un impun nuevo de texto -->
+      
+       <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="sample1">
+    <label class="mdl-textfield__label etiqueta"  for="sample1">agregar item</label>
+      </div>
+      <button id="btnAgregar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+        +
+      </button>
       <div class="mdl-layout-spacer"></div>
+      <button id="btnDeshacer" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+        deshacer
+      </button>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                   mdl-textfield--floating-label mdl-textfield--align-right">
         <label class="mdl-button mdl-js-button mdl-button--icon"
@@ -55,95 +68,56 @@ material desing lite: tiene varias cosas, en la parte de componentes esta todo l
   <div class="mdl-layout__drawer">
     <span class="mdl-layout__title">Simple Layout</span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="#">Nav link 1</a>
-      <a class="mdl-navigation__link" href="#">Nav link 2</a>
-      <a class="mdl-navigation__link" href="#">Nav link 3</a>
+      <a class="mdl-navigation__link" href="#">limpiar lista</a>
+      <a class="mdl-navigation__link" href="#">guardar lista</a>
+      <a class="mdl-navigation__link" href="#">cargar lista</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
-  <div class="lista">lista de compras de aqui</div>
-
+  <div id="galeria">
+    <!-- <table style="width: 100%;"  class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">Material</th>
+          <th>Quantity</th>
+          <th>Unit price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+          <td>250</td>
+          <td>$2.90</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+          <td>50</td>
+          <td>$1.25</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+          <td>10</td>
+          <td>$12.35</td>
+        </tr>
+      </tbody>
+    </table> 
   
+  esto queda comentado es una tabla de material que se puede usar como opcion de como quedaria una lista-->
 
-    <div style="display: grid; justify-content: center; grid-template-columns: 25% 25% 25%;
-    gap: 10px; padding: 10px; box-sizing: border-box;">
-
-      <div class="mdl-card">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">item 1</h2>
+    <div class="item">
+      <div class="titulo">
+        carne picada
       </div>
-      <div class="mdl-card__supporting-text">
-        <div>precio</div>
-        <div>cantidad</div>
-      </div>
-      <div class="mdl-card__actions">
-        <a href="#">borrar</a>
+      <div class="controles"></div>
+      <div class="borrar">
+        <a href="#" class="borrar">eliminar</a>
       </div>
     </div>
-    <div class="mdl-card">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">item 1</h2>
-      </div>
-      <div class="mdl-card__supporting-text">
-        <div>precio</div>
-        <div>cantidad</div>
-      </div>
-      <div class="mdl-card__actions">
-        <a href="#">borrar</a>
-      </div>
-    </div><div class="mdl-card">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">item 1</h2>
-      </div>
-      <div class="mdl-card__supporting-text">
-        <div>precio</div>
-        <div>cantidad</div>
-      </div>
-      <div class="mdl-card__actions">
-        <a href="#">borrar</a>
-      </div>
-    </div><div class="mdl-card">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">item 1</h2>
-      </div>
-      <div class="mdl-card__supporting-text">
-        <div>precio</div>
-        <div>cantidad</div>
-      </div>
-      <div class="mdl-card__actions">
-        <a href="#">borrar</a>
-      </div>
-    </div><div class="mdl-card">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">item 1</h2>
-      </div>
-      <div class="mdl-card__supporting-text">
-        <div>precio</div>
-        <div>cantidad</div>
-      </div>
-      <div class="mdl-card__actions">
-        <a href="#">borrar</a>
-      </div>
-    </div><div class="mdl-card">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">item 1</h2>
-      </div>
-      <div class="mdl-card__supporting-text">
-        <div>precio</div>
-        <div>cantidad</div>
-      </div>
-      <div class="mdl-card__actions">
-        <a href="#">borrar</a>
-      </div>
-    </div>
-
-
+  
+    
   </div>
-      
-
-     
-   <!-- break 1.26hs -->
-  </main>
+         <!-- break 1.26hs clase1 -->
+</main>
 </div>
 
 <!-- lo que se hizo en esta clase es usa material desing lite e ir copiando y pegando varios codigos que la pagina ofree
@@ -168,7 +142,15 @@ se pone -m para poner un comentario queda git commit -m "comnetario"
 
 
 -->
-
+<script src="main.js"></script>
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </body>
 </html>
+
+<!-- clase 2: iniciamos cambiando lo de la linea 32 quedo comentado, y se cambia por un imput y un boton todo sacado de material desing lite
+  luego tambie se implemento de ejempo una lista, de mdl, y se agregaron mas estilos, se borro lo de la clase 1,
+  y se puso botones nuevos como el + y el deshacer todo esto en la primer hora de clase.
+ 
+  a partir de la hora 1.15 comenzamos a trabjar con un script
+
+-->
