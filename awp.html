@@ -43,8 +43,8 @@ material desing lite: tiene varias cosas, en la parte de componentes esta todo l
       </nav>   clase2: se borra esta parte para agregar un impun nuevo de texto -->
       
        <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="sample1">
-    <label class="mdl-textfield__label etiqueta"  for="sample1">agregar item</label>
+    <input  class="mdl-textfield__input" type="text" id="inpAgregar">
+    <label class="mdl-textfield__label etiqueta"  for="inpAgregar">agregar item</label>
       </div>
       <button id="btnAgregar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
         +
@@ -53,24 +53,26 @@ material desing lite: tiene varias cosas, en la parte de componentes esta todo l
       <button id="btnDeshacer" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
         deshacer
       </button>
+      <div class="mdl-layout-spacer"></div>
+
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                   mdl-textfield--floating-label mdl-textfield--align-right">
         <label class="mdl-button mdl-js-button mdl-button--icon"
-               for="fixed-header-drawer-exp">
+               for="inpBusqueda">
           <i class="material-icons">search</i>
         </label>
         <div class="mdl-textfield__expandable-holder">
           <input class="mdl-textfield__input" type="text" name="sample"
-                 id="fixed-header-drawer-exp">
+                 id="inpBusqueda">
         </div>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout__title">Simple Layout</span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="#">limpiar lista</a>
-      <a class="mdl-navigation__link" href="#">guardar lista</a>
-      <a class="mdl-navigation__link" href="#">cargar lista</a>
+      <a class="mdl-navigation__link" href="#" id="linkLimpiarLista">limpiar lista</a>
+      <a class="mdl-navigation__link" href="#" id="">guardar lista</a>
+      <a class="mdl-navigation__link" href="#" id="">cargar lista</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -103,7 +105,7 @@ material desing lite: tiene varias cosas, en la parte de componentes esta todo l
     </table> 
   
   esto queda comentado es una tabla de material que se puede usar como opcion de como quedaria una lista-->
-
+<!-- 
     <div class="item">
       <div class="titulo">
         carne picada
@@ -112,7 +114,7 @@ material desing lite: tiene varias cosas, en la parte de componentes esta todo l
       <div class="borrar">
         <a href="#" class="borrar">eliminar</a>
       </div>
-    </div>
+    </div>      esto se uso como ejemplo para ver como quedaba insertado en el body-->
   
     
   </div>
