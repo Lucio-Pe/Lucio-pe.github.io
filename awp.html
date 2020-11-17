@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json"> <!--asi se enlaza el archivo manifest-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-blue.min.css" />
 <link rel="stylesheet" href="styleawp.css">
-<title>Document</title>
+<title>SuperLista</title>
 </head>
 <body>
   <!-- clase1: introduccion a las aplicaciones web progresivas, en la parte superior derecha
@@ -31,7 +32,7 @@ material desing lite: tiene varias cosas, en la parte de componentes esta todo l
   <header class="mdl-layout__header">
     <div class="mdl-layout-icon"></div>
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout__title">Simple Lista</span>
+      <span class="mdl-layout__title">Super Lista</span>
       <div class="mdl-layout-spacer"></div>
 
 
@@ -144,8 +145,19 @@ se pone -m para poner un comentario queda git commit -m "comnetario"
 
 
 -->
+
 <script src="main.js"></script>
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+
+<!-- registrar el service worker -->
+<script>
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('sw.js')
+    .then(reg => console.log('service Worker Registrado correctamente', reg));
+  }
+
+</script>
 </body>
 </html>
 
