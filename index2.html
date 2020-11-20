@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<input type="text" id="campo" disabled>
+
+    <script>
+  //promise & fetch
+  //una promesa es una operacion asincronica que puede ser resuelta o rechazada.
+  //tarea 1: crear la promesa y definir cuando esta resuelta o rechazada
+                // const promesa = new Promise(function(res, rej){
+
+                //     let temperatura = 23;
+                // if(temperatura > 25){
+                //     res('todo ok')
+                // }
+                // else{
+                //     rej('error')
+                // }
+                // });
+//tarea 2: usar la promesa y definir que hacer cuando esta resuelta o rechazada.
+//       promesa
+//     .then(function(mensaje){
+//     document.write(mensaje)
+//     })
+//      .catch(function(error){
+//     console.log(error)
+//      });
+//esta promesa a la hora de implemetnacion se crea con el contructor new promise y recibe una funcion que recibe dos funciones 
+//de resolver y de rechazar. 
+//para ejecutar la promesa se usa then y chatch, pero tambien se puede usar async y await.
+//async y await:
+/**
+ * 1 paso se ejecuta la promesa
+ * 2-espera(await) a que la promesa se resuelva
+ * 3-cuando la primesa e resuelve, await devuelve el argumento de la funcion
+ * rsolver
+*/
+
+                // async function myFuncion(){
+                //     const mensaje = await promesa;
+                //     console.log(mensaje);
+                // }
+
+                // myFuncion();
+
+                //hasta aca probamos como trabajana las promesas con la funcion de la linea 24. queda todo comentado
+
+/**API FETCH:
+ * 1-en que ambito esta disponible: en el objeto window(browser)
+ *                                service Worker(worker)
+ * 
+ * 2-que provee al ambito global: funciones: fetch()
+ *                                -eventos: fetcEvent
+ *                                -objetos: request y response
+ * dentro de los objetos:request y response(funciones constructoras)
+ * 
+ * para probar esto usamos la pagina jsonplaceholder.typicode.com, de ahi sacamos una verificacion cn el objeto request
+ * y en esa pagina buscamos una api disponible para llmar, usamos la de jsonplaceholder.typicode/users que es un sitio donde nos da
+ * unas cosas de una api para practicar y pedir cosas, dice como usar un poco y todo
+ * se copia la url y en el editor se hace la peticion:
+ * 
+ * hacemos la peticion y convertimos los datos en un json asi podemos obtener los datos
+*/
+
+let peticionHttp = new Request('https://jsonplaceholder.typicode.com/users')
+console.log(peticionHttp);
+//funciones: hacer un fetch(request)=> seria una promise del response
+
+(async function(){
+  const respuesta = await fetch('https://jsonplaceholder.typicode.com/users');
+  
+  if(respuesta.status == 200){
+      const datos = await respuesta.json();
+      console.log(datos);
+      document.querySelector('#campo').disabled = false;//cambiamos el estado de disable del input
+      document.querySelector('#campo').addEventListener('input', function(e){
+          const a_mostrar = datos.filter(function(val){
+              return val.name.includes(e.target.value)
+            });
+            console.log(a_mostrar)
+        });
+    }
+//hicimos una peticion de una api, con async await, con una condicion de que si el estatus es 200
+// va a activar el campo de busqueda para mostrar lo que pregutamos y tambien se muestra en la consola
+})();
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+   </script>
+</body>
+</html>
