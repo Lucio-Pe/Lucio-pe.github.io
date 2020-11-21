@@ -8,6 +8,9 @@ let datos = [
 
 let datosPrevios = [];
 
+const rest = RESTClient('https://5fb828892f145f0016c3c2e6.mockapi.io/items'
+);
+
 const btnAgregar = document.querySelector('#btnAgregar');
 const inpBusqueda = document.querySelector('#inpBusqueda');
 const btnDeshacer = document.querySelector('#btnDeshacer');
@@ -39,15 +42,38 @@ function render(lista = [{titulo:'',cantidad:0, precio:0}]){
     });
 }
 
+//clase4
+            // async function loadAPI(completado){
+            //     const endpoint ='https://5fb828892f145f0016c3c2e6.mockapi.io/items';
+            //     const res = await fetch(endpoint);
+            //     const json = await res.json();
+
+            //     datos = json;
+
+            //     completado(datos);
+            // }
+
 //esto es lo que se agrega al html.
 
 //eventos, hacer click en los botones que tengo: agregar item, deshacer, busqueda
 //limpiar lista, guardaar lista, cargar lista
 
 //cargar la pagina:
+
+
+// document.addEventListener('DOMContentloaded', ()=>{
+//     // render(datos);
+//     loadAPI(function(){//agregamos esto para el evento y sacamos solo el render.
+//         render(datos);
+//     });    queda comentado xq se agrega todo abajo linea 200
+// });
+
 document.addEventListener('DOMContentloaded', ()=>{
-    render(datos);
-})
+    res.get(function(json){
+        datos = json;
+        render(json);
+    });
+});    //otra forma de recuperar la informacion
 
 btnAgregar.addEventListener("click", ()=>{
     datosPrevios = datos.slice(0);
@@ -156,3 +182,54 @@ tambien hicimos un una funcion para renderizar, que fuimos agreagando a alguno d
  *  */
 
 
+/**
+ *------- clase 4: usamos la pagina mockAPI y entramos con gmail, es un api endpoint donde tenemos recursos, y creamos un proyecto free
+ * y vamos agregando los recursos que necesitamos hacemos click en nuestro proyecto
+ * y vamos sumando los recursos, con new recurso, ahi le ponemos el nombre que queremos, y donde dice create art, faker son datos que vamos cambiando
+ * nos da unos de ejemplos que vamos modificando depende lo que querramos, despues mas abajo nos manda los endpoints y si le ponemos create y nos crea
+ * si pasamos la manito seleccionamos la cantidad y nos crea la cantidad con los datos random y nos da una api edpoint que copiamos
+ * y pegamos en otra pestaña con la palabra items al final y aparece todos los datos en texto plano.
+ * ahora vamos a trabajar con promesas en la linea 43.
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
+ //objetos
+// const rest = (function(){
+    // async function loadAPI(completado){
+    //     const endpoint ='https://5fb828892f145f0016c3c2e6.mockapi.io/items';
+    //     const res = await fetch(endpoint);
+    //     const json = await res.json();
+    
+    //     datos = json;
+    
+    //     completado(datos);}
+
+    //otra forma:
+    //  const endpoint = 'https://5fb828892f145f0016c3c2e6.mockapi.io/items'
+//      function crearPeticion(url,metodo= 'GET', cuerpo = ''){
+//          return async function(compleatado){
+//              let res;
+//              if(metodo == 'GET')
+//                  res = await fetch(url)
+//                  else
+//                   res = await fetch(url, {method: metodo, body:cuerpo})
+            
+//             let data = await res.json();
+//             compleatado(data)
+//                 }
+//             }
+     
+    
+//     return {
+//         // getAll: loadAPI
+//         get: crearPeticion(endpoint),
+//         post: (cuerpo, callback)=> crearPeticion(endpoint, 'POST', cuerpo)(callback),
+//         put:(id,cuerpo, callback)=> crearPeticion(endpoint+'/'+id, 'PUT', cuerpo)(callback),
+//         delete:(id,cuerpo, callback)=> crearPeticion(endpoint+'/'+id, 'DELETE', cuerpo)(callback),
+// //esto es como se manipula una api, con distintos pedidos http, mas complejo
+//     }
+ 
