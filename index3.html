@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clase5</title>
+</head>
+<body>
+
+<input type="number" id="numero1">+
+<input type="number" id="numero2"> <br>
+<br>
+<button>sumar</button>
+<div id="respuesta"></div>
+
+    <script>
+      //usamos el objeto worker, verificamos si esta, ls diferencia entre worker y serviceWorker
+      //es q worker es la interfaz una clase generica, y serviceworker es la impolementacion de esa clase.
+        if(window.Worker){
+            const calculadora = new Worker('calculadora.worker.js');//referenciamos el archivo externo para enlazarlo
+       //enviar peticiones(mensajes)
+        document.querySelector("button").addEventListener('click',()=>{
+            const numero1 = Number(document.querySelector("#numero1").value);
+            const numero2 = Number(document.querySelector("#numero2").value);
+            calculadora.postMessage({
+           numero1,
+           numero2
+           });
+        });
+
+       
+       //como recibo la respuesta: (mensaje)
+       calculadora.addEventListener('message', (e)=>{
+           console.log(e.data); 
+           document.querySelector("#respuesta").innerHTML ="la suma es:" + e.data;
+       })
+      
+
+        }else{
+            console.log('worker no soportado')
+        }
+/**se hizo un service worker dentro del html todo el codigo a traves de postmessage y de mesaje
+usamos e y data, que son datos que toamos de los objetos.
+
+cada vez que comenzamos  ahacer un service worker, tenemos que hacer la instalacion, y dentro del ciclo hacemos la activacion, 
+una vez que esta en funcionaminto nuestro service worker entra lo que seria el fetch, donde lo que va a tomar va a ser
+aquellos archivos que quedaron en la cache.
+dentro de windows tenemos worker que es la interfaz que tenemos que implementar con logica.
+
+
+un service worker es como un proxy entre el navegador, la red y la cache---
+
+main threas<------------------>service worker <----------------->network
+                              <---->
+                              cache
+los recursos que pida mi pagina van a ser interceptados por el worker los busca en la cache y sino los busca en la red.
+break 1hs42
+
+*/
+    </script>
+</body>
+</html>

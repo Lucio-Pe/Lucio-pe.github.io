@@ -3,17 +3,28 @@ const RESTClient = function(endpoint){
 
 function crearPeticion(url,metodo= 'GET', cuerpo = ''){
     return async function(compleatado){
-        let res;
-        if(metodo == 'GET')
+        
+    //     if(window.Worker){
+
+    //         }
+    //         else{ 
+    //         let  res;
+    //         if(metodo == 'GET')
+    //         res = await fetch(url)
+    //         else res = await fetch(url, {method:metodo, body:cuerpo})
+    //    let data = await res.json();
+    //    compleatado(data)
+    //        }
+
+    let  res;
+            if(metodo == 'GET')
             res = await fetch(url)
-            else
-             res = await fetch(url, {method: metodo, body:cuerpo})
-       
+            else res = await fetch(url, {method:metodo, body:cuerpo})
        let data = await res.json();
        compleatado(data)
            }
        }
-
+    
 
 return {
    // getAll: loadAPI

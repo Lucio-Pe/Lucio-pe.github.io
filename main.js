@@ -19,6 +19,14 @@ const galeria = document.querySelector('#galeria');
 const linkLimpiarLista = document.querySelector('#linkLimpiarLista');
 
 
+//workers ---clase 5 1.53hs
+let busquedaWorker = false;
+
+if(window.Worker){
+//se le asigna la instanciacion del nuevo worker
+    busquedaWorker = new Worker('workers/busqueda.worker.js')
+}
+
 //funciones que necesito
 
 const template = ({titulo,cantidad,precio})=> 
@@ -93,15 +101,31 @@ btnDeshacer.addEventListener('click', ()=>{
 })
 
 inpBusqueda.addEventListener('input', e=>{
-    let vista = datos.filter( (val) =>{
-        if(val.titulo.includes(e.target.value)){
-            return true;
-        } else {
-            return false;
-        }
-    });
-
+    // let vista = datos.filter( (val) =>{
+    //     if(val.titulo.includes(e.target.value)){
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // });    queda comentado de la clase 5 1.50hs
+        //esta logica debe ejecutarse en caso de que no tengamos worker
+        if(!busquedaWorker){ 
+    let vista = datos.filter(val => val.titulo.includes(e.target.value));
+    //es parecido al codigo de la linea 97 al 99
     render(vista)
+}else{
+    //uso del worker para filtrar los datos
+    //hay que tener dos versiones una que soporte el worker y otra que no la soporte
+    console.log('busqueda worker registrado');
+    busquedaWorker.postMessage({
+        datos,
+        filtro: e.target.value
+    });
+busquedaWorker.addEventListener('message', (e)=>{
+    console.log(e);
+    render(e.data);
+})
+}
 })
 
 //limpiar lista

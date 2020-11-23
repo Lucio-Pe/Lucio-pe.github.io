@@ -41,7 +41,12 @@ self.addEventListener('activate', e=>{
 
 
 
-
+/**calse 5:
+ * trabajamos lo que son service worker que es un componente para que trabaje de manera offline,
+ * es una especie de proxy que se trabaja en segudno plano:
+ * por un lado se ejecuta el window donde los proceso internos esta la carga del dom, fetch, ect
+ * por otro lado hay otra linea donde se ejecuta el worker que son tambien script que programamos,
+ */
 
 
 
